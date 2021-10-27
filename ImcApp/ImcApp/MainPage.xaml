@@ -24,11 +24,11 @@
             <StackLayout>
                 <Label Text="Peso de la persona en Kilogramos:"
                        FontSize="Body" />
-                <Entry FontSize="Medium"/>
+                <Entry FontSize="Medium" x:Name="PesoEntry"/>
 
                 <Label Text="Estatura de la persona en Metro:" 
                        FontSize="Body"/>
-                <Entry FontSize="Medium"/>
+                <Entry FontSize="Medium" x:Name="EstaturaEntry"/>
             </StackLayout>
             
         </Frame>
@@ -37,9 +37,11 @@
                      HorizontalOptions="CenterAndExpand">
 
             <Button Text="Calcular" FontSize="Body" 
-                    WidthRequest="130"/>
+                    WidthRequest="130" x:Name="CalcularEntry"
+                    Clicked="CalcularButton_Clicked"/>
             <Button Text="Limpiar" FontSize="Body" 
-                    WidthRequest="130"/>
+                    WidthRequest="130" x:Name="LimpiarEntry"
+                    Clicked="LimpiarButton_Clicked"/>
 
         </StackLayout>
 
@@ -49,10 +51,10 @@
             <StackLayout>
                 <Label Text="El indice de masa corporal de la persona es:" FontSize="Body"/>
                 <Label Text="23.4567" HorizontalOptions="Center"
-                       FontSize="28"/>
+                       FontSize="28" x:Name="ImcLabel"/>
                 <Label Text="La situacion nutricional de la persona es:" FontSize="Body"/>
                 <Label Text="Peso Normal" HorizontalOptions="Center"
-                       FontSize="28"/>
+                       FontSize="28" x:Name="SituacionNutricionalLabel"/>
             </StackLayout>
             
         </Frame>
