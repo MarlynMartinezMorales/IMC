@@ -1,73 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
+using ImcApp.Model;
+using ImcApp.ViewModels; 
 
-namespace ImcApp
+namespace ImcApp.Viwe
 {
     public partial class MainPage : ContentPage
     {
-        private CalculadoraImc imc;
-        
+        private MainPageViewModel viewModel;
+
         public MainPage()
         {
-            InitializeComponent();
-            LimpiarIU();
-        }
-
-        private void CalcularButton_Clicked(object sender, EventArgs e)
-        {
-            decimal peso;
-            decimal estatura;
-            bool pesoEsConvertible = decimal.TryParse(PesoEntry.Text, out peso);
-            bool estaturaEsConvertible = decimal.TryParse(EstaturaEntry, out estatura);
-            if(pesoEsConvertible && estaturaEsConvertible)
-            {
-                CalculadoraImc cimc = new CalculadoraImc(peso, estatura);
-                ImcLabel.Text = string.Format("{0:f4}", cimc.Imc);
-                SituacionNutricionalLabel.Text =
-                    GetEstadoNutricional(cimc.SituacionNutricional);
-            }
-            else
-            {
-                DisplayAlert("Alerta",
-                    "El peso y la estatura deben ser valores numericos.",
-                    "Aceptar");
-            }
-        }
-
-        private void LimpiarButton_Clicked(object sender, EventArgs e)
-        {
-            LimpiarIU();
-        }
-        private string GetEstadoNutricional(CalculadoraImc.EstadoNutricional estado)
-        {
-            switch (estado)
-            {
-                case CalculadoraImc.EstadoNutricional.PesoBajo:
-                    return "Peso Bajo";
-                case CalculadoraImc.EstadoNutricional.PesoNormal:
-                    return "Peso Normal";
-                case CalculadoraImc.EstadoNutricional.SobrePeso:
-                    return "Sobre Peso";
-                case CalculadoraImc.EstadoNutricional.Obesidad:
-                    return "Obesidad";
-                case CalculadoraImc.EstadoNutricional.ObesidadExtrema:
-                    return "Obesidad Extrema";
-                default:
-                    return string.Empty;
-            }
-        }
-
-        private void LimpiarIU()
-        {
-            PesoEntry.Text = string.Empty;
-            EstaturaEntry.Text = string.Empty;
-            ImcLabel.Text = string.Empty;
-            SituacionNutricionalLabel.Text = string.Empty;
+            InitializeComponent()
+            viewModel = new MainPageViewModel();
+            BindingContext = viewModel; 
         }
     }
+
 }
+
+
+

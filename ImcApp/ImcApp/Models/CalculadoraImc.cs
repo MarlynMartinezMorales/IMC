@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
+using ImcApp;
 
 namespace ImcApp.Model
 {
