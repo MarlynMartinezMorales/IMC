@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImcApp.MainPage">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary Source="Resource/resource.xaml"/>
+    </ContentPage.Resources>-->
+    
+    <StackLayout>
+       
+        <Frame <!--Margin="8" CornerRadius="0" BorderColor="LightGray"-->>
+
+            <StackLayout>
+                <!--<Label Text="Peso de la persona en Kilogramos:"
+                       FontSize="Body" />-->
+                <Entry x:Name="PesoEntry"
+                       Placeholder="{DynamicResource TextoPlaceholderPeso}"/>
+
+                <!--<Label Text="Estatura de la persona en Metro:" 
+                       FontSize="Body"/>-->
+                <Entry x:Name="EstaturaEntry"
+                       Placeholder="{DynamicResource TextoPlaceholderEstatura}"/>
+            </StackLayout>
+            
+        </Frame>
+
+        <StackLayout Orientation="Horizontal" Padding="4" 
+                     HorizontalOptions="CenterAndExpand">
+
+            <Button Text="{DynamicResource TextoBotonCalcular}"
+                    x:Name="CalcularEntry"
+                    Clicked="CalcularButton_Clicked"/>
+            <Button Text="{DynamicResource TextoBotonLimpiar}"
+                    x:Name="LimpiarEntry"
+                    Clicked="LimpiarButton_Clicked"/>
+
+        </StackLayout>
+
+ 
+        <Frame>
+
+            <StackLayout>
+                <Label  Text="{DynamicResource TextoMensajeImc}"
+                       Style="{StaticResource EstiloMensaje}"/>
+                <Label Text="23.4567"
+                       Style="{StaticResource EstiloResultado}"
+                       x:Name="ImcLabel"/>
+                <Label Text="{DynamicResource TextoMensajeSituacionNutricional}"
+                       Style="{StaticRecource EstiloMensaje}"/>
+                <Label Text="Peso Normal" 
+                       Style="{StaticResource EstiloResultado}"
+                       x:Name="SituacionNutricionalLabel"/>
+            </StackLayout>
+            
+        </Frame>
+         
+    </StackLayout>
+
+</ContentPage>
