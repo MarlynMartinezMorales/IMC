@@ -5,7 +5,7 @@ using Xamarin.Forms;
 using ImcApp;
 
 //Alumno: Martinez Morales Marlyn Guadalupe
-//Fecha de ultima modificacion: 
+//Fecha de ultima modificacion: 11/01/2022
 
 namespace ImcApp.Models
 {

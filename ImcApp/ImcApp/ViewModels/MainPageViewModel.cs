@@ -5,6 +5,9 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using ImcApp.Models;
 
+//Alumno: Martinez Morales Marlyn Guadalupe
+//Fecha de ultima modificacion: 11/01/2022
+
 namespace ImcApp.ViewModels
 {
     class MainPageViewModel : INotifyPropertyChanged

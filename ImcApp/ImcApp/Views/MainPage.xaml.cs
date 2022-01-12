@@ -3,6 +3,8 @@ using System;
 using Xamarin.Forms;
 using ImcApp.ViewModels;
 
+//Alumno: Martinez Morales Marlyn Guadalupe
+//Fecha de ultima modificacion: 11/01/2022
 
 namespace ImcApp.Views
 {
@@ -14,7 +16,6 @@ namespace ImcApp.Views
             InitializeComponent();
             viewModel = new MainPageViewModel();
             BindingContext = viewModel;
-            //LimpiarIU();
         }
 
         private string GetEstadoNutricional(CalculadoraImc.EstadoNutricional estado)
